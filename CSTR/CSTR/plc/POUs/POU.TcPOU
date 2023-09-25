@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="POU" Id="{2b220fe8-eb42-4e97-a052-a93bd4dfc23b}" SpecialFunc="None">
+  <POU Name="POU" Id="{836f32ed-eb68-4810-b301-3c8dcf604713}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM POU
 VAR
 END_VAR
@@ -11,7 +11,7 @@ END_VAR
           <Data>
             <o xml:space="preserve" t="NWLImplementationObject">
               <v n="NetworkListComment">""</v>
-              <v n="DefaultViewMode">"Ld"</v>
+              <v n="DefaultViewMode">"Fbd"</v>
               <l2 n="NetworkList" cet="Network">
                 <o>
                   <v n="ILActive">false</v>

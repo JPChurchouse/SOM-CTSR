@@ -1371,11 +1371,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">993</v>
+                      <v n="Value">959</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">288</v>
+                      <v n="Value">257</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1623,12 +1623,12 @@
             <d2 n="Size" ckt="Int32" cvt="VisualObjectSize">
               <v>0</v>
               <o>
-                <v n="Width">1050</v>
+                <v n="Width">1016</v>
                 <v n="Height">575</v>
               </o>
               <v>1</v>
               <o>
-                <v n="Width">1051</v>
+                <v n="Width">1017</v>
                 <v n="Height">575</v>
               </o>
             </d2>
