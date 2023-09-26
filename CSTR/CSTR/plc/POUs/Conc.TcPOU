@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="POU" Id="{836f32ed-eb68-4810-b301-3c8dcf604713}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM POU
+  <POU Name="Conc" Id="{96ed4091-2a3c-4981-a685-3b97a3982cca}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Conc
 VAR
 END_VAR
 ]]></Declaration>
