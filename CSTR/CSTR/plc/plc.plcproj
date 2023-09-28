@@ -30,6 +30,9 @@
     <Compile Include="POUs\Conc.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Funcs.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\High.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Temp.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\test.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\TimeControl.TcPOU">

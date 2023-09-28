@@ -26,12 +26,11 @@ END_VAR
                   <v n="OutCommented">false</v>
                   <l2 n="NetworkItems">
                     <o t="BoxTreeDemux">
-                      <v n="VarId">2</v>
-                      <o n="Input" t="BoxTreeBox">
-                        <v n="BoxType">"AND"</v>
-                        <o n="Instance" t="Operand">
-                          <n n="Operand" />
-                          <v n="Type">""</v>
+                      <v n="VarId">8</v>
+                      <o n="Input" t="BoxTreeOperand">
+                        <o n="Operand" t="Operand">
+                          <v n="Operand">"GVL.high_run"</v>
+                          <v n="Type">"BOOL"</v>
                           <v n="Comment">""</v>
                           <v n="SymbolComment">""</v>
                           <v n="Address">""</v>
@@ -42,99 +41,19 @@ END_VAR
                           </o>
                           <v n="LValue">false</v>
                           <v n="Boolean">false</v>
-                          <v n="IsInstance">true</v>
-                          <v n="Id">36L</v>
+                          <v n="IsInstance">false</v>
+                          <v n="Id">41L</v>
                         </o>
-                        <o n="OutputItems" t="OutputItemList">
-                          <l2 n="OutputItems">
-                            <n />
-                          </l2>
-                        </o>
-                        <o n="Flags" t="Flags">
-                          <v n="Flags">0</v>
-                          <v n="Fixed">false</v>
-                          <v n="Extensible">false</v>
-                        </o>
-                        <l2 n="InputFlags" cet="Flags">
-                          <o>
-                            <v n="Flags">1</v>
-                            <v n="Fixed">true</v>
-                            <v n="Extensible">false</v>
-                          </o>
-                          <o>
-                            <v n="Flags">0</v>
-                            <v n="Fixed">false</v>
-                            <v n="Extensible">false</v>
-                          </o>
-                        </l2>
-                        <l2 n="InputItems" cet="BoxTreeOperand">
-                          <o>
-                            <o n="Operand" t="Operand">
-                              <v n="Operand">"high_done"</v>
-                              <n n="Type" />
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
-                                <v n="Extensible">false</v>
-                              </o>
-                              <v n="LValue">false</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">39L</v>
-                            </o>
-                            <v n="Id">38L</v>
-                          </o>
-                          <o>
-                            <o n="Operand" t="Operand">
-                              <v n="Operand">"high_run"</v>
-                              <n n="Type" />
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
-                                <v n="Extensible">false</v>
-                              </o>
-                              <v n="LValue">false</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">41L</v>
-                            </o>
-                            <v n="Id">40L</v>
-                          </o>
-                        </l2>
-                        <o n="InputParam" t="ParamList">
-                          <l2 n="Names" />
-                          <l2 n="Types" />
-                        </o>
-                        <o n="OutputParam" t="ParamList">
-                          <l2 n="Names" cet="String">
-                            <v></v>
-                          </l2>
-                          <l2 n="Types" cet="String">
-                            <v>BOOL</v>
-                          </l2>
-                        </o>
-                        <v n="CallType" t="Operator">And</v>
-                        <v n="EN">false</v>
-                        <v n="ENO">false</v>
-                        <n n="STSnippet" />
-                        <v n="ContainsExtensibleInputs">false</v>
-                        <v n="ProvidesSTSnippet">false</v>
-                        <v n="Id">37L</v>
+                        <v n="Id">40L</v>
                       </o>
-                      <v n="Id">54L</v>
+                      <v n="Id">64L</v>
                     </o>
                     <o t="BoxTreeAssign">
                       <o n="OutputItems" t="OutputItemList">
                         <l2 n="OutputItems" cet="Operand">
                           <o>
-                            <v n="Operand">"high_run"</v>
-                            <n n="Type" />
+                            <v n="Operand">"GVL.high_run"</v>
+                            <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -156,51 +75,96 @@ END_VAR
                         <v n="Extensible">false</v>
                       </o>
                       <o n="RValue" t="BoxTreeDemux">
-                        <v n="VarId">2</v>
+                        <v n="VarId">8</v>
                         <n n="Input" />
-                        <v n="Id">55L</v>
+                        <v n="Id">65L</v>
                       </o>
                       <v n="Id">49L</v>
                     </o>
-                    <o t="BoxTreeAssign">
+                    <o t="BoxTreeBox">
+                      <v n="BoxType">"EXECUTE"</v>
+                      <o n="Instance" t="Operand">
+                        <n n="Operand" />
+                        <v n="Type">""</v>
+                        <v n="Comment">""</v>
+                        <v n="SymbolComment">""</v>
+                        <v n="Address">""</v>
+                        <o n="Flags" t="Flags">
+                          <v n="Flags">0</v>
+                          <v n="Fixed">false</v>
+                          <v n="Extensible">false</v>
+                        </o>
+                        <v n="LValue">false</v>
+                        <v n="Boolean">false</v>
+                        <v n="IsInstance">true</v>
+                        <v n="Id">88L</v>
+                      </o>
                       <o n="OutputItems" t="OutputItemList">
-                        <l2 n="OutputItems" cet="Operand">
-                          <o>
-                            <v n="Operand">"high_done"</v>
-                            <n n="Type" />
-                            <v n="Comment">""</v>
-                            <v n="SymbolComment">""</v>
-                            <v n="Address">""</v>
-                            <o n="Flags" t="Flags">
-                              <v n="Flags">0</v>
-                              <v n="Fixed">false</v>
-                              <v n="Extensible">false</v>
-                            </o>
-                            <v n="LValue">true</v>
-                            <v n="Boolean">false</v>
-                            <v n="IsInstance">false</v>
-                            <v n="Id">57L</v>
-                          </o>
+                        <l2 n="OutputItems">
+                          <n />
                         </l2>
                       </o>
                       <o n="Flags" t="Flags">
                         <v n="Flags">0</v>
-                        <v n="Fixed">false</v>
+                        <v n="Fixed">true</v>
                         <v n="Extensible">false</v>
                       </o>
-                      <o n="RValue" t="BoxTreeDemux">
-                        <v n="VarId">2</v>
-                        <n n="Input" />
-                        <v n="Id">56L</v>
+                      <n n="InputFlags" />
+                      <l2 n="InputItems" cet="BoxTreeDemux">
+                        <o>
+                          <v n="VarId">8</v>
+                          <n n="Input" />
+                          <v n="Id">66L</v>
+                        </o>
+                      </l2>
+                      <o n="InputParam" t="ParamList">
+                        <l2 n="Names" cet="String">
+                          <v>EN</v>
+                        </l2>
+                        <l2 n="Types" cet="String">
+                          <v>BOOL</v>
+                        </l2>
                       </o>
-                      <v n="Id">58L</v>
+                      <o n="OutputParam" t="ParamList">
+                        <l2 n="Names" cet="String">
+                          <v>ENO</v>
+                        </l2>
+                        <l2 n="Types" cet="String">
+                          <v>BOOL</v>
+                        </l2>
+                      </o>
+                      <v n="CallType" t="Operator">None</v>
+                      <v n="EN">true</v>
+                      <v n="ENO">true</v>
+                      <o n="STSnippet" t="STSnippet">
+                        <o n="STSnippet" t="STImplementationObject">
+                          <o n="TextDocument" t="TextDocument">
+                            <a n="TextLines" cet="TextLine">
+                              <o>
+                                <v n="Id">87L</v>
+                                <n n="Tag" />
+                                <v n="Text">""</v>
+                              </o>
+                            </a>
+                          </o>
+                        </o>
+                        <v n="Id">89L</v>
+                      </o>
+                      <v n="ContainsExtensibleInputs">false</v>
+                      <v n="ProvidesSTSnippet">true</v>
+                      <v n="Id">90L</v>
+                    </o>
+                    <o t="BoxTreeDemux">
+                      <v n="VarId">8</v>
+                      <n n="Input" />
+                      <v n="Id">86L</v>
                     </o>
                   </l2>
                   <l2 n="Connectors" />
                   <v n="Id">28L</v>
                 </o>
               </l2>
-              <v n="BranchCounter">2</v>
+              <v n="BranchCounter">8</v>
               <v n="ValidIds">true</v>
             </o>
           </Data>
@@ -219,7 +183,11 @@ END_VAR
             <Type n="Operator">{bffb3c53-f105-4e85-aba2-e30df579d75f}</Type>
             <Type n="OutputItemList">{f40d3e09-c02c-4522-a88c-dac23558cfc4}</Type>
             <Type n="ParamList">{71496971-9e0c-4677-a832-b9583b571130}</Type>
+            <Type n="STImplementationObject">{3b83b776-fb25-43b8-99f2-3c507c9143fc}</Type>
             <Type n="String">System.String</Type>
+            <Type n="STSnippet">{b2131366-6917-4304-87a9-64c0585560a8}</Type>
+            <Type n="TextDocument">{f3878285-8e4f-490b-bb1b-9acbb7eb04db}</Type>
+            <Type n="TextLine">{a5de0b0b-1cb5-4913-ac21-9d70293ec00d}</Type>
           </TypeList>
         </XmlArchive>
       </NWL>

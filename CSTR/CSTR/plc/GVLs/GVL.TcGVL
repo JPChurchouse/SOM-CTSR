@@ -7,9 +7,9 @@ VAR_GLOBAL
 	time_sim : TIME := T#0MS;
 	time_change : TIME := T#2S;
 	alarm : BOOL := FALSE;
-	height : REAL := 2.2;
-	temp : REAL := 353.16;
-	concentration : REAL := 1.0;
+	high_val : REAL := 2.2;
+	temp_val : REAL := 353.16;
+	conc_val : REAL := 1.0;
 	
 	
 	valve_open : REAL := 0;
@@ -17,9 +17,6 @@ VAR_GLOBAL
 	vol_out : REAL := 0;
 	
 	
-	high_done: BOOL;
-	temp_done : BOOL := FALSE;
-	conc_done : BOOL := FALSE;
 	
 	high_run : BOOL := FALSE;
 	temp_run : BOOL := FALSE;
@@ -30,7 +27,7 @@ VAR_GLOBAL
 END_VAR
 
 VAR_GLOBAL CONSTANT
-	tank_area : REAL := 1;
+	tank_area : REAL := PI * EXPT(1.8/2,2);
 	tank_max : REAL := 2.5;
 	gravity : REAL := 9.81;	
 	time_wash_between : TIME := T#2H;

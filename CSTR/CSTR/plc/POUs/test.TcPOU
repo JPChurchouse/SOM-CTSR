@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="test" Id="{ddacef68-b9e7-4d3b-a171-9a0343e6bd9b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION test
+VAR_INPUT
+END_VAR
+VAR
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[a : REAL := (GVL.vol_in - ) * GVL.time_change / GVL.tank_area
+b : REAL := 14 * EXPT(10,-6)
+c : REAL := SQRT(2 * GVL.gravity * GVL.tank_max)
+e : REAL := GVL.time_change / GVL.tank_area]]></ST>
+    </Implementation>
+    <LineIds Name="test">
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

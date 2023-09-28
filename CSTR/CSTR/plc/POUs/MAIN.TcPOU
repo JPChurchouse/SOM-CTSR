@@ -6,10 +6,15 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[POU();]]></ST>
+      <ST><![CDATA[TimeControl();
+High();
+Temp();
+Conc();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="8" Count="0" />
       <LineId Id="2" Count="0" />
+      <LineId Id="6" Count="1" />
     </LineIds>
   </POU>
 </TcPlcObject>
