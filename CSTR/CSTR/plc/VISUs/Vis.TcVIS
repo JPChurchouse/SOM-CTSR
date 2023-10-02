@@ -2427,7 +2427,7 @@
                     </o>
                     <o>
                       <v n="Id">1274183999L</v>
-                      <v n="Value">"RIGHT"</v>
+                      <v n="Value">"LEFT"</v>
                     </o>
                     <o>
                       <v n="Id">2640826223L</v>
@@ -2439,7 +2439,7 @@
                     </o>
                     <o>
                       <v n="Id">3841252171L</v>
-                      <v n="Value">"TOP_DOWN"</v>
+                      <v n="Value">"BOTTOM_UP"</v>
                     </o>
                     <o>
                       <v n="Id">2812299069L</v>
@@ -2463,7 +2463,7 @@
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value" t="Int16">40</v>
+                      <v n="Value" t="Int16">100</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
@@ -2471,7 +2471,7 @@
                     </o>
                     <o>
                       <v n="Id">2985826283L</v>
-                      <v n="Value">"%i*100"</v>
+                      <v n="Value">"%.2f"</v>
                     </o>
                     <o>
                       <v n="Id">493260384L</v>
@@ -2511,7 +2511,11 @@
                     </o>
                     <o>
                       <v n="Id">2080633722L</v>
-                      <v n="Value">"608"</v>
+                      <v n="Value">"606"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3352862552L</v>
+                      <v n="Value">true</v>
                     </o>
                   </l>
                 </o>
@@ -2582,7 +2586,7 @@
                     </o>
                     <o>
                       <v n="Id">3841252171L</v>
-                      <v n="Value">"TOP_DOWN"</v>
+                      <v n="Value">"BOTTOM_UP"</v>
                     </o>
                     <o>
                       <v n="Id">2812299069L</v>
@@ -2606,7 +2610,7 @@
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value" t="Int16">40</v>
+                      <v n="Value" t="Int16">100</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
@@ -2651,6 +2655,10 @@
                     <o>
                       <v n="Id">397264524L</v>
                       <v n="Value">"GVL.steam_temp"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3352862552L</v>
+                      <v n="Value">true</v>
                     </o>
                   </l>
                 </o>
@@ -4432,12 +4440,12 @@
             <d2 n="Size" ckt="Int32" cvt="VisualObjectSize">
               <v>0</v>
               <o>
-                <v n="Width">1190</v>
+                <v n="Width">1250</v>
                 <v n="Height">500</v>
               </o>
               <v>1</v>
               <o>
-                <v n="Width">1191</v>
+                <v n="Width">1251</v>
                 <v n="Height">501</v>
               </o>
             </d2>

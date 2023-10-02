@@ -9,9 +9,11 @@ VAR
 	c : REAL := SQRT(2 * GVL.const_grav * GVL.tank_high);
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[FlowOut :=  a * b * c;]]></ST>
+      <ST><![CDATA[GVL.flow_out := a * b * c;
+FlowOut :=  GVL.flow_out;]]></ST>
     </Implementation>
     <LineIds Name="FlowOut">
+      <LineId Id="19" Count="0" />
       <LineId Id="12" Count="0" />
     </LineIds>
   </POU>
