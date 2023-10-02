@@ -27,25 +27,31 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Conc.TcPOU">
+    <Compile Include="POUs\SetCIP.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Funcs.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\High.TcPOU">
+    <Compile Include="POUs\UpdateConc.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Temp.TcPOU">
+    <Compile Include="POUs\UpdateHigh.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\test.TcPOU">
+    <Compile Include="POUs\Rrate.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\UpdateTemp.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\TimeControl.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\VolNow.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FlowOut.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Visualization Manager.TcVMO">
@@ -117,6 +123,11 @@
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
     </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="plc.tmc">
+      <SubType>Content</SubType>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

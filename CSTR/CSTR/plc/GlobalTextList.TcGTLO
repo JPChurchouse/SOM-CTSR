@@ -10,6 +10,71 @@
               <v n="TextDefault">"%"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
+            <o>
+              <v n="TextID">"546"</v>
+              <v n="TextDefault">"%.1*100f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"168"</v>
+              <v n="TextDefault">"%.1f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"501"</v>
+              <v n="TextDefault">"%.1f*100"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"918"</v>
+              <v n="TextDefault">"%.1i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"57"</v>
+              <v n="TextDefault">"%.1r"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"631"</v>
+              <v n="TextDefault">"%1*f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"964"</v>
+              <v n="TextDefault">"%1f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"819"</v>
+              <v n="TextDefault">"%2.1i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"466"</v>
+              <v n="TextDefault">"%2d"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"608"</v>
+              <v n="TextDefault">"%i*100"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"679"</v>
+              <v n="TextDefault">"INLET"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"126"</v>
+              <v n="TextDefault">"OUTLET"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"334"</v>
+              <v n="TextDefault">"STEAM"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
           </l>
           <l n="Languages" t="ArrayList" />
           <v n="GuidInit">{cf3dd660-40c9-46ca-a0d6-dd6b33d74dab}</v>

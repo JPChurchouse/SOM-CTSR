@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="SetCIP" Id="{70d7c6cf-0751-4d41-bb2e-68ff548ee88d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION SetCIP
+
+VAR_INPUT
+	cip : BOOL := FALSE;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// I'd love a ternary operator about now...
+
+IF cip THEN
+	GVL.conc_in := GVL.cip_conc;
+	GVL.flow_in := GVL.cip_flin;
+ELSE
+	GVL.conc_in := GVL.norm_conc;
+	GVL.flow_in := GVL.norm_flin;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="SetCIP">
+      <LineId Id="7" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="21" Count="1" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

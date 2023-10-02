@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="UpdateConc" Id="{b27bea74-94ad-4690-b24c-92ba42a905df}" SpecialFunc="None">
+    <Declaration><![CDATA[// Update the concentration of the material
+FUNCTION UpdateConc
+
+VAR
+	// Concentration in [mol/s]
+	in : REAL := GVL.conc_in * GVL.flow_in; // mol/m3 * m3/s -> mol/s
+	
+	// Conc destroyed [mol/s]
+	des : REAL :=  Rrate() * VolNow(); // mol/m3/s * m3 -> mol/s
+	
+	// Conc out [mol/s]
+	out : REAL := GVL.conc_now * GVL.flow_out; // mol/m3 * m3/s -> mol/s
+	
+	// Coefficient
+	coef : REAL := GVL.time_step / VolNow(); // s/m3
+	
+	// delta  [mol/m3]
+	dconc : REAL; // mol/s * s/m3 -> mol/m3
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[dconc := (in - des - out) * coef;
+GVL.conc_now := GVL.conc_now + dconc;]]></ST>
+    </Implementation>
+    <LineIds Name="UpdateConc">
+      <LineId Id="29" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

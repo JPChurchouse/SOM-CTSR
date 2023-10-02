@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FlowOut" Id="{9eb8b10c-54cd-4142-b2a4-1aa0751dd7b0}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION FlowOut : REAL
+
+VAR
+	a : REAL := 14 * EXPT(10,-6);
+	b : REAL := GVL.valve_oule;
+	c : REAL := SQRT(2 * GVL.const_grav * GVL.tank_high);
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[FlowOut :=  a * b * c;]]></ST>
+    </Implementation>
+    <LineIds Name="FlowOut">
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

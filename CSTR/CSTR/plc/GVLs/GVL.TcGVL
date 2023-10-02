@@ -4,34 +4,61 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
 	
-	time_sim : TIME := T#0MS;
-	time_change : TIME := T#2S;
-	alarm : BOOL := FALSE;
-	high_val : REAL := 2.2;
-	temp_val : REAL := 353.16;
-	conc_val : REAL := 1.0;
+	// INPUTS
+	// Outlet valve position (0.00-1.00)
+	valve_oule : REAL := 0;
+	// Input steam tempuratue (there are min/max)
+	steam_temp : REAL := 50;
 	
+	// MAIN VARIABLES
+	high_now   : REAL := 2.2;
+	temp_now   : REAL := 80;
+	conc_now   : REAL := 1.0;
 	
-	valve_open : REAL := 0;
-	vol_in : REAL := 0;
-	vol_out : REAL := 0;
+	volPC_now  : REAL := 0;
 	
+	// Flows - volume per second
+	flow_in    : REAL := 2 /1000;	// m3/s
+	flow_out   : REAL := 0;			// m3/s
 	
+	// Concentration in
+	conc_in    : REAL := 10;		// mol/m3
 	
-	high_run : BOOL := FALSE;
-	temp_run : BOOL := FALSE;
-	conc_run : BOOL := FALSE;
+	temp_wall  : REAL := 25;
 	
-
-
 END_VAR
 
 VAR_GLOBAL CONSTANT
-	tank_area : REAL := PI * EXPT(1.8/2,2);
-	tank_max : REAL := 2.5;
-	gravity : REAL := 9.81;	
-	time_wash_between : TIME := T#2H;
-	time_wash_length : TIME := T#20M;
+	
+	time_step  : REAL := 2;			// s
+	
+	temp_inle  : REAL := 25;		// °c
+	temp_oset  : REAL := 273.16;	// °c
+	
+	steam_mini : REAL := 50;		// °c
+	steam_maxi : REAL := 300;		// °c
+	//steam_step : REAL := 10;		// °c
+	
+	tank_diam  : REAL := 1.8;		// m
+	tank_area  : REAL := PI * EXPT(tank_diam, 2) / 4; // m2
+	tank_high  : REAL := 2.5;		// m
+	
+	cip_Tbet   : TIME := T#2H;
+	cip_Tlen   : TIME := T#20M;
+	
+	cip_conc   : REAL := 5;			// mol/m3
+	cip_flin   : REAL := 4 /1000;	// m3/s
+	norm_conc  : REAL := 10; 		// mol/m3
+	norm_flin  : REAL := 2 /1000;	// m3/s
+	
+	const_grav : REAL := 9.81;		// N/kg
+	const_AE   : REAL := 5000;		// K
+	const_Rk   : REAL := 578 *1000;	// m3/mol/s
+	const_rho  : REAL := 1000;		// kg/m3
+	const_Kwal : REAL := 600;		// J/s/K/m2
+	const_cp   : REAL := 4.18*1000; // J/kg/K
+	const_Hr   : REAL := 45  *1000;	// J/mol
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

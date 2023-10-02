@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="UpdateHigh" Id="{ddacef68-b9e7-4d3b-a171-9a0343e6bd9b}" SpecialFunc="None">
+    <Declaration><![CDATA[// Update the height of material in the tank
+FUNCTION UpdateHigh
+
+VAR
+	// Flow in [m3/s]
+	in : REAL := GVL.flow_in; // m3/s
+	
+	// Flow out [m3/s]
+	out : REAL := FlowOut(); // m3/s
+	
+	// Coeff
+	coef : REAL := GVL.time_step / GVL.tank_area; // s/m2
+	
+	// delta
+	dhigh : REAL; // m3/s * s/m2 -> m
+	
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[dhigh := (in - out) * coef;
+GVL.high_now := GVL.high_now + dhigh;
+
+GVL.volPC_now := GVL.high_now * 100 / GVL.tank_high;]]></ST>
+    </Implementation>
+    <LineIds Name="UpdateHigh">
+      <LineId Id="82" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="95" Count="0" />
+      <LineId Id="88" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
