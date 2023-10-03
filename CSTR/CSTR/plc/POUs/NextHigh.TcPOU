@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="NextHigh" Id="{ddacef68-b9e7-4d3b-a171-9a0343e6bd9b}" SpecialFunc="None">
+    <Declaration><![CDATA[// Update the height of material in the tank
+FUNCTION NextHigh : REAL
+
+VAR
+	// Flow in [m3/s]
+	in : REAL := GVL.flow_inlet; // m3/s
+	
+	// Flow out [m3/s]
+	out : REAL := FlowOut(); // m3/s
+	
+	// Coeff
+	coef : REAL := GVL.time_step / GVL.tank_area; // s/m2
+	
+	// delta
+	dhigh : REAL; // m3/s * s/m2 -> m
+	
+	// Truncate the maximum height
+	maxi : REAL := GVL.tank_high * 1.001;
+	
+	// Temporary variable to hold the next value
+	next : REAL;
+
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[dhigh := (in - out) * coef;
+next := GVL.high_now + dhigh;
+
+IF next > maxi THEN
+	next := maxi;
+END_IF
+
+NextHigh := next;
+
+GVL.fullness := next * 100 / GVL.tank_high;]]></ST>
+    </Implementation>
+    <LineIds Name="NextHigh">
+      <LineId Id="82" Count="0" />
+      <LineId Id="140" Count="0" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="115" Count="0" />
+      <LineId Id="117" Count="1" />
+      <LineId Id="137" Count="0" />
+      <LineId Id="95" Count="0" />
+      <LineId Id="141" Count="0" />
+      <LineId Id="88" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

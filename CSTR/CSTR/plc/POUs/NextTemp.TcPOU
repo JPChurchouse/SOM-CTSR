@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="NextTemp" Id="{22e1325d-e778-41e7-94d8-d75093f602a2}" SpecialFunc="None">
+    <Declaration><![CDATA[// Update temperature of the material
+FUNCTION NextTemp : REAL
+
+VAR
+	// Heat in [J/s]
+	a   : REAL := GVL.const_rho * GVL.flow_inlet * GVL.const_cp; // kg/m3 * m3/s * J/kg/K -> J/s/K
+	b   : REAL := GVL.temp_inle - GVL.temp_now; // K - K -> K
+	Qin : REAL := a * b; // J/s/K * K -> J/s
+	
+	// Heat from reaction [J/s]
+	num : REAL := 45000; // J/mol
+	Qre : REAL := Rrate() * VolNow() * num; // mol/m3/s * m3 * J/mol -> J/s
+	
+	// Heat conducted in from steam jacket [J/s]
+	c   : REAL := GVL.const_Kwal * GVL.tank_diam * PI * GVL.high_now; // J/s/K/m2 * m * m -> J/s/K
+	d   : REAL := GVL.temp_wall  - GVL.temp_now; // K - K -> K
+	Qco : REAL := c * d; // J/s/K * K -> J/s
+	
+	// Support coefficients
+	dtime : REAL := GVL.time_step; // s
+	mtcp  : REAL := GVL.const_rho * GVL.const_cp * VolNow(); // kg/m3 * J/kg/K * m3 -> J/K
+	
+	// Delta [K]
+	dtemp : REAL; // J/s * s / J/K -> K
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[dtemp := (Qin + Qre + Qco) * dtime / mtcp;
+NextTemp := GVL.temp_now + dtemp;]]></ST>
+    </Implementation>
+    <LineIds Name="NextTemp">
+      <LineId Id="7" Count="0" />
+      <LineId Id="61" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

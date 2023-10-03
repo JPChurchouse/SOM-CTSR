@@ -2,19 +2,40 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="MAIN" Id="{da1e2e68-f202-4ed0-8d51-9abdfc0ccaa5}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
+
 VAR
-END_VAR
-]]></Declaration>
+	high : REAL;
+	temp : REAL;
+	conc : REAL;
+END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[UpdateHigh();
-UpdateTemp();
-UpdateConc();
-SetCIP(FALSE);]]></ST>
+      <ST><![CDATA[// Make the calculations based on consistent data
+high := NextHigh();
+temp := NextTemp();
+conc := NextConc();
+
+// Update the globals
+GVL.high_now := high;
+GVL.temp_now := temp;
+GVL.conc_now := conc;
+
+// Update the CIP status
+SetCIP(FALSE);
+
+// Calculate time
+GVL.time_now := RunTime();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="16" Count="1" />
-      <LineId Id="7" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="28" Count="2" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="36" Count="3" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="35" Count="0" />
       <LineId Id="18" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="47" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

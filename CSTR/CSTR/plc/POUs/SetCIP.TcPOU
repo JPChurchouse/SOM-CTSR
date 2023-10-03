@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="SetCIP" Id="{70d7c6cf-0751-4d41-bb2e-68ff548ee88d}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION SetCIP
+    <Declaration><![CDATA[// Set the CIP status
+FUNCTION SetCIP
 
 VAR_INPUT
 	cip : BOOL := FALSE;
@@ -10,12 +11,14 @@ END_VAR]]></Declaration>
       <ST><![CDATA[// I'd love a ternary operator about now...
 
 IF cip THEN
-	//GVL.conc_in := GVL.cip_conc;
-	//GVL.flow_temp := GVL.cip_flin;
+	GVL.conc_in := GVL.conc_cip;
+	GVL.flow_inlet := GVL.flow_cip;
 ELSE
-	//GVL.conc_in := GVL.norm_conc;
-	//GVL.flow_temp := GVL.norm_flin;
-END_IF]]></ST>
+	GVL.conc_in := GVL.conc_norm;
+	GVL.flow_inlet := GVL.flow_norm;
+END_IF
+
+GVL.is_cip := cip;]]></ST>
     </Implementation>
     <LineIds Name="SetCIP">
       <LineId Id="7" Count="0" />
@@ -26,6 +29,8 @@ END_IF]]></ST>
       <LineId Id="19" Count="0" />
       <LineId Id="21" Count="1" />
       <LineId Id="15" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="28" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

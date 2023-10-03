@@ -27,25 +27,25 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\RunTime.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\SetCIP.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\UpdateConc.TcPOU">
+    <Compile Include="POUs\NextConc.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\UpdateHigh.TcPOU">
+    <Compile Include="POUs\NextHigh.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Rrate.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\UpdateTemp.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\TimeControl.TcPOU">
+    <Compile Include="POUs\NextTemp.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\VolNow.TcPOU">
