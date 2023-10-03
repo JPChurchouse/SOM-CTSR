@@ -4,9 +4,9 @@
     <Declaration><![CDATA[FUNCTION FlowOut : REAL
 
 VAR
-	a : REAL := 14 * EXPT(10,-6);
+	a : REAL := 14 * EXPT(10,-4);
 	b : REAL := GVL.valve_oule;
-	c : REAL := SQRT(2 * GVL.const_grav * GVL.tank_high);
+	c : REAL := SQRT(2 * GVL.const_grav * GVL.high_now);
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[GVL.flow_out := a * b * c;

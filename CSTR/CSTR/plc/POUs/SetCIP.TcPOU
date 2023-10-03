@@ -10,11 +10,11 @@ END_VAR]]></Declaration>
       <ST><![CDATA[// I'd love a ternary operator about now...
 
 IF cip THEN
-	GVL.conc_in := GVL.cip_conc;
-	GVL.flow_in := GVL.cip_flin;
+	//GVL.conc_in := GVL.cip_conc;
+	//GVL.flow_temp := GVL.cip_flin;
 ELSE
-	GVL.conc_in := GVL.norm_conc;
-	GVL.flow_in := GVL.norm_flin;
+	//GVL.conc_in := GVL.norm_conc;
+	//GVL.flow_temp := GVL.norm_flin;
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="SetCIP">

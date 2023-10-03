@@ -17,16 +17,25 @@ VAR
 	// delta
 	dhigh : REAL; // m3/s * s/m2 -> m
 	
+	maxi : REAL := GVL.tank_high * 1.10;
+	
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[dhigh := (in - out) * coef;
 GVL.high_now := GVL.high_now + dhigh;
+
+IF GVL.high_now > maxi THEN
+	GVL.high_now := maxi;
+END_IF
 
 GVL.volPC_now := GVL.high_now * 100 / GVL.tank_high;]]></ST>
     </Implementation>
     <LineIds Name="UpdateHigh">
       <LineId Id="82" Count="0" />
       <LineId Id="11" Count="0" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="115" Count="0" />
+      <LineId Id="117" Count="1" />
       <LineId Id="95" Count="0" />
       <LineId Id="88" Count="0" />
     </LineIds>

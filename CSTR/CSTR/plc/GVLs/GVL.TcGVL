@@ -18,8 +18,9 @@ VAR_GLOBAL
 	volPC_now  : REAL := 0;
 	
 	// Flows - volume per second
-	flow_in    : REAL := 2 /1000;	// m3/s
+	//flow_in    : REAL := 2;	// m3/s
 	flow_out   : REAL := 0;			// m3/s
+	flow_in : REAL := 0.002;
 	
 	// Concentration in
 	conc_in    : REAL := 10;		// mol/m3
