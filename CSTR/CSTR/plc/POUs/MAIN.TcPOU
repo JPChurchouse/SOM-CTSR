@@ -23,7 +23,9 @@ GVL.conc_now := conc;
 SetCIP(FALSE);
 
 // Calculate time
-GVL.time_now := RunTime();]]></ST>
+GVL.time_now := RunTime();
+
+GVL.alarm := CheckAlarm();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="40" Count="0" />
@@ -36,6 +38,8 @@ GVL.time_now := RunTime();]]></ST>
       <LineId Id="46" Count="0" />
       <LineId Id="45" Count="0" />
       <LineId Id="47" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="48" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

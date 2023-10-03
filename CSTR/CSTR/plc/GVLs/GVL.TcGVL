@@ -6,6 +6,7 @@ VAR_GLOBAL
 	
 	// CURRENT TIME
 	time_now   : REAL := 0;
+	time_step  : REAL := 2;
 	
 	// INPUTS
 	// Outlet valve position [0-100 %]
@@ -36,11 +37,14 @@ VAR_GLOBAL
 	// CIP status
 	is_cip : BOOL := FALSE;
 	
+	// Alarm status
+	alarm : BOOL := FALSE;
+	
 END_VAR
 
 VAR_GLOBAL CONSTANT
 	
-	time_step  : REAL := 2;			// s
+				// s
 	time_cip   : REAL := 20 *60;
 	time_cyc   : REAL := 2 *60 *60;
 	

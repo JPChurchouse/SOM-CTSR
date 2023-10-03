@@ -27,6 +27,9 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\CheckAlarm.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\RunTime.TcPOU">
       <SubType>Code</SubType>
     </Compile>

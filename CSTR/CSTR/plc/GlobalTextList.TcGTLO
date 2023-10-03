@@ -26,6 +26,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"9"</v>
+              <v n="TextDefault">"%.1fmol/m³"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"918"</v>
               <v n="TextDefault">"%.1i"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -66,6 +71,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"285"</v>
+              <v n="TextDefault">"%GVL.time_now"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"570"</v>
               <v n="TextDefault">"%i"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -81,6 +91,26 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"166"</v>
+              <v n="TextDefault">"%s"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"418"</v>
+              <v n="TextDefault">"conc mol/m³"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"728"</v>
+              <v n="TextDefault">"conc\nmol/m³"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"883"</v>
+              <v n="TextDefault">"GVL.time_now"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"284"</v>
               <v n="TextDefault">"i"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -91,6 +121,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"399"</v>
+              <v n="TextDefault">"mol/m³"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"126"</v>
               <v n="TextDefault">"OUTLET"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -98,6 +133,16 @@
             <o>
               <v n="TextID">"334"</v>
               <v n="TextDefault">"STEAM"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"231"</v>
+              <v n="TextDefault">"Time: %i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"230"</v>
+              <v n="TextDefault">"°C"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
           </l>
