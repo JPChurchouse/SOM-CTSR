@@ -25,7 +25,10 @@ SetCIP(FALSE);
 // Calculate time
 GVL.time_now := RunTime();
 
-GVL.alarm := CheckAlarm();]]></ST>
+GVL.alarm := CheckAlarm();
+
+
+// HOW DOES THE TANK WALL WORK //]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="40" Count="0" />
@@ -40,6 +43,8 @@ GVL.alarm := CheckAlarm();]]></ST>
       <LineId Id="47" Count="0" />
       <LineId Id="49" Count="0" />
       <LineId Id="48" Count="0" />
+      <LineId Id="57" Count="1" />
+      <LineId Id="56" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -6,6 +6,11 @@
         <o xml:space="preserve" t="GlobalTextListObject">
           <l n="TextList" t="ArrayList" cet="TextListRow">
             <o>
+              <v n="TextID">"134"</v>
+              <v n="TextDefault">""</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"851"</v>
               <v n="TextDefault">"%"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -96,6 +101,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"417"</v>
+              <v n="TextDefault">"CLEAN IN PLACE"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"418"</v>
               <v n="TextDefault">"conc mol/m³"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -118,6 +128,11 @@
             <o>
               <v n="TextID">"679"</v>
               <v n="TextDefault">"INLET"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"595"</v>
+              <v n="TextDefault">"MASTER ALERT"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
