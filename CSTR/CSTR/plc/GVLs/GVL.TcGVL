@@ -41,6 +41,8 @@ VAR_GLOBAL
 	// Alarm status
 	alarm : BOOL := FALSE;
 	
+	autohold : BOOL := FALSE;
+	
 END_VAR
 
 VAR_GLOBAL CONSTANT
@@ -67,11 +69,11 @@ VAR_GLOBAL CONSTANT
 	
 	const_grav : REAL := 9.81;		// N/kg
 	const_AE   : REAL := 5000;		// K
-	const_Rk   : REAL := 578 *1000;	// m3/mol/s
+	const_Rk   : REAL := 578000;	// m3/mol/s
 	const_rho  : REAL := 1000;		// kg/m3
 	const_Kwal : REAL := 600;		// J/s/K/m2
-	const_cp   : REAL := 4.18*1000; // J/kg/K
-	const_Hr   : REAL := 45  *1000;	// J/mol
+	const_cp   : REAL := 4180; 		// J/kg/K
+	const_Hr   : REAL := 45000;		// J/mol
 	
 END_VAR]]></Declaration>
   </GVL>

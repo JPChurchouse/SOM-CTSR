@@ -6,14 +6,35 @@ FUNCTION FlowOut : REAL
 
 VAR
 	a : REAL := 14 * EXPT(10,-6);
-	b : REAL := GVL.valve_oule; // 0-100
-	c : REAL := SQRT(2 * GVL.const_grav * GVL.high_now);
+	b : REAL := SQRT(2 * GVL.const_grav * GVL.high_now);
+	coef : REAL := a * b;
+	
+	valve : REAL := GVL.valve_oule; // 0-100
+	in : REAL := gvl.flow_inlet;
+	out : REAL := gvl.flow_out;
+	auto : BOOL := GVL.autohold;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[GVL.flow_out := a * b * c;
+      <ST><![CDATA[IF auto THEN
+	IF out < in*0.9 THEN
+		valve := valve + 1;
+	ELSIF out > in*1.1 THEN
+		valve := valve - 1;
+	END_IF
+	gvl.valve_oule := valve;
+END_IF
+
+GVL.flow_out := coef * valve;
 FlowOut :=  GVL.flow_out;]]></ST>
     </Implementation>
     <LineIds Name="FlowOut">
+      <LineId Id="29" Count="0" />
+      <LineId Id="47" Count="2" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="30" Count="0" />
       <LineId Id="19" Count="0" />
       <LineId Id="12" Count="0" />
     </LineIds>
