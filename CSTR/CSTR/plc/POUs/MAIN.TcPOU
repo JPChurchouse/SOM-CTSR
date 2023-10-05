@@ -27,8 +27,7 @@ GVL.time_now := RunTime();
 
 GVL.alarm := CheckAlarm();
 
-
-// HOW DOES THE TANK WALL WORK //]]></ST>
+RunSteam();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="40" Count="0" />
@@ -43,7 +42,7 @@ GVL.alarm := CheckAlarm();
       <LineId Id="47" Count="0" />
       <LineId Id="49" Count="0" />
       <LineId Id="48" Count="0" />
-      <LineId Id="57" Count="1" />
+      <LineId Id="58" Count="0" />
       <LineId Id="56" Count="0" />
     </LineIds>
   </POU>

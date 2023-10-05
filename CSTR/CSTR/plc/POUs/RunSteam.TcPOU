@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="RunSteam" Id="{475fa9dc-9a0d-4478-a41e-ad86e1ec38db}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION RunSteam : REAL
+
+VAR
+	now  : REAL := GVL.steam_now;
+	maxi : REAL := GVL.steam_maxi;
+	mini : REAL := GVL.steam_mini;
+	step : REAL := GVL.steam_step * GVL.time_step;
+	set  : REAL := gvl.steam_set;
+	
+	new  : REAL;
+	diff : REAL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Validation
+IF set > maxi THEN
+	set := maxi;
+ELSIF set < mini THEN
+	set := mini;
+END_IF
+
+
+diff := set - now; // How many degrees to move to setpoint
+
+
+// LESS than target and MORE than a step away
+IF diff >= step THEN
+	new := now + step;	
+
+// GREATER then target and MORE than a step away
+ELSIF diff <= -step THEN
+	new := now - step;
+
+// Is correct or within one step
+ELSE
+	new := set;
+END_IF
+
+
+gvl.temp_wall := new;
+gvl.steam_now := new;]]></ST>
+    </Implementation>
+    <LineIds Name="RunSteam">
+      <LineId Id="65" Count="0" />
+      <LineId Id="68" Count="1" />
+      <LineId Id="73" Count="1" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="58" Count="1" />
+      <LineId Id="43" Count="1" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="31" Count="1" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

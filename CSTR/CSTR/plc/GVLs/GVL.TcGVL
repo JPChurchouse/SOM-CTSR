@@ -12,7 +12,8 @@ VAR_GLOBAL
 	// Outlet valve position [0-100 %]
 	valve_oule : REAL := 0;
 	// Input steam tempuratue ['min'-'max' °C]
-	steam_temp : REAL := 50;
+	steam_now : REAL := 50;
+	steam_set : REAL := 50;
 	
 	// CURRENT STATUS'
 	// Current height (m)
@@ -53,6 +54,7 @@ VAR_GLOBAL CONSTANT
 	
 	steam_mini : REAL := 50;		// °C
 	steam_maxi : REAL := 300;		// °C
+	steam_step : REAL := 10;//persec
 	
 	tank_diam  : REAL := 1.8;		// m
 	tank_area  : REAL := PI * EXPT(tank_diam, 2) / 4; // m2

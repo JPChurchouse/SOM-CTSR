@@ -30,6 +30,9 @@
     <Compile Include="POUs\CheckAlarm.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\RunSteam.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\RunTime.TcPOU">
       <SubType>Code</SubType>
     </Compile>
