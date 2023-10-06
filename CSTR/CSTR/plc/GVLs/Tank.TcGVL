@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="Tank" Id="{16bd7c78-d57e-4d62-962b-87d9a8fcc01f}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+
+// TANK PROPERTIES [m, m2, m3]
+
+VAR_GLOBAL CONSTANT
+	
+	D : REAL := 1.8;
+	H : REAL := 2.5;
+	A : REAL := PI * EXPT(D, 2) / 4;
+	V : REAL := A * H;
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

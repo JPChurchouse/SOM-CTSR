@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="Status" Id="{ae224cc5-84ba-458e-bd29-4e706c7a805d}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+
+// STATUS & SIMULATION VARS
+
+VAR_GLOBAL
+	
+	// CIP status
+	is_cip : BOOL := FALSE;
+	
+	// Alarm status
+	alarm : BOOL := FALSE;
+		
+	// Time now and time per machine cycle
+	time_now  : REAL := 0; // [s]
+	
+END_VAR
+
+VAR_GLOBAL CONSTANT
+	
+	// CIP period
+	time_cip : REAL := 20 *60; // [s]
+	
+	// CIP cycle period
+	time_cycle : REAL := 2 *60 *60; // [s]
+		
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

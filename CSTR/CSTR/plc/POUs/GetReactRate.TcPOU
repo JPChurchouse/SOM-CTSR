@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="GetReactRate" Id="{ac67f14b-de86-4e0f-b024-f80724755f36}" SpecialFunc="None">
+    <Declaration><![CDATA[
+// CALCULATE CURRENT REACTION RATE [mol/m3/s]
+
+FUNCTION GetReactRate : REAL
+
+VAR
+	
+	// Module A [(mol/m3)2]
+	a : REAL := EXPT(Conc.now,2); 
+	
+	// Module B [m3/mol/s]
+	b : REAL := Const.Rk; 
+	
+	// Module C []
+	c : REAL := EXP(-const.AE / (temp.now + temp.offset));
+	
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// [mol2/m32 * m3/mol/s -> mol/m3/s]
+GetReactRate := a * b * c;]]></ST>
+    </Implementation>
+    <LineIds Name="GetReactRate">
+      <LineId Id="27" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

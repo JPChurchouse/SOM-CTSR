@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="GetOutFlow" Id="{9eb8b10c-54cd-4142-b2a4-1aa0751dd7b0}" SpecialFunc="None">
+    <Declaration><![CDATA[
+// CALCULATE THE CURRENT OUTFLOW [m3/s]
+
+FUNCTION GetOutFlow : REAL
+
+VAR
+	// Module A []
+	a : REAL := 14 * EXPT(10,-6);
+	
+	// Module B []
+	b : REAL := SQRT(2 * const.grav * High.now);
+	
+	// Combine MA and MB []
+	coef : REAL := a * b;
+	
+	
+	// Outlet valve value [0-100%]
+	valve : REAL := userin.outlet_percent;
+
+	// Flow in and out [m3/s]
+	in  : REAL := flow.in;
+	out : REAL;
+	
+	// Auto hold is enabled?
+	match : BOOL := userin.IO_match;
+
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Calculate output
+out := coef * valve;
+
+IF out < 0 THEN
+	out := 0;
+END_IF
+
+// Return flow value
+GetOutFlow := out;
+flow.out := out;
+
+// If running IO matching
+// Try to find a valve setting to equate in and out
+IF match THEN
+	userin.outlet_percent := valve + (in-out)*1000;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="GetOutFlow">
+      <LineId Id="111" Count="0" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="170" Count="0" />
+      <LineId Id="169" Count="0" />
+      <LineId Id="171" Count="1" />
+      <LineId Id="114" Count="1" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="142" Count="0" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="80" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

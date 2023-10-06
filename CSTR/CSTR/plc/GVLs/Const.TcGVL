@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="Const" Id="{6082328f-ef4c-4808-9e3f-5c99e7f7af1e}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+
+// CONSTANT VALUES
+
+VAR_GLOBAL CONSTANT
+	
+	// Gravitational acceleration [N/kg]
+	grav : REAL := 9.81;
+	
+	// Activation Energy [K]
+	AE   : REAL := 5000;
+
+	// Rate Konstant [m3/mol/s] (as opposed to the Rate *C*onstant?)		
+	Rk   : REAL := 578000;
+
+	// Density of the liquid [kg/m3]
+	rho  : REAL := 1000;
+	
+	// Thermal transfer Koefficient [J/s/K/m2] (again with the *K*?)
+	Kwall : REAL := 600;
+
+	// Specific heat of the liquid [J/kg/K]
+	cp   : REAL := 4180;
+
+	// Heat of Reaction [J/mol]
+	Hr   : REAL := 45000;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

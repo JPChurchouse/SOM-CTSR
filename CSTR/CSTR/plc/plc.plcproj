@@ -20,14 +20,46 @@
     <Compile Include="GlobalTextList.TcGTLO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GVLs\GVL.TcGVL">
+    <Compile Include="GVLs\Conc.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\Const.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\Flow.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\Status.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\Steam.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\Tank.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\Temp.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\UserIn.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\High.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\CheckAlarm.TcPOU">
+    <Compile Include="POUs\RunAlarmCheck.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\RunSteam.TcPOU">
@@ -48,16 +80,16 @@
     <Compile Include="POUs\NextHigh.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Rrate.TcPOU">
+    <Compile Include="POUs\GetReactRate.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\NextTemp.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\VolNow.TcPOU">
+    <Compile Include="POUs\GetVolume.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FlowOut.TcPOU">
+    <Compile Include="POUs\GetOutFlow.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Visualization Manager.TcVMO">

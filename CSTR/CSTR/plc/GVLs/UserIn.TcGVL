@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="UserIn" Id="{fa4a1534-257d-4235-a230-f436dd238645}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+
+// USER INPUTS
+
+VAR_GLOBAL
+	
+	// Time step [s]
+	time_step : REAL := 2;
+	
+	// Outlet valve position [0-100 as percentage]
+	outlet_percent : REAL := 0;
+	
+	// Steam tempurature [°C]
+	steam_temp : REAL := 50;
+	
+	// Autohold status
+	IO_match : BOOL := FALSE;
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

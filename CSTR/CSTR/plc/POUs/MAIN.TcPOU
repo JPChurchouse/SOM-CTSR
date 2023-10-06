@@ -4,39 +4,42 @@
     <Declaration><![CDATA[PROGRAM MAIN
 
 VAR
-	high : REAL;
-	temp : REAL;
-	conc : REAL;
+	h : REAL;
+	t : REAL;
+	c : REAL;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Make the calculations based on consistent data
-high := NextHigh();
-temp := NextTemp();
-conc := NextConc();
+      <ST><![CDATA[// Run all calculations on same data - save new values at end of machine cycle
+h := NextHigh();
+t := NextTemp();
+c := NextConc();
 
 // Update the globals
-GVL.high_now := high;
-GVL.temp_now := temp;
-GVL.conc_now := conc;
+High.now := h;
+Temp.now := t;
+Conc.now := c;
 
-// Calculate time
-GVL.time_now := RunTime();
+// Run steam
+RunSteam();
 
-GVL.alarm := CheckAlarm();
+// Run alarm
+RunAlarmCheck();
 
-RunSteam();]]></ST>
+// Run time
+RunTime();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="40" Count="0" />
       <LineId Id="28" Count="2" />
       <LineId Id="41" Count="0" />
       <LineId Id="36" Count="3" />
+      <LineId Id="68" Count="1" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="70" Count="0" />
       <LineId Id="46" Count="0" />
+      <LineId Id="72" Count="0" />
       <LineId Id="45" Count="0" />
-      <LineId Id="47" Count="0" />
-      <LineId Id="49" Count="0" />
-      <LineId Id="48" Count="0" />
-      <LineId Id="58" Count="0" />
       <LineId Id="56" Count="0" />
     </LineIds>
   </POU>

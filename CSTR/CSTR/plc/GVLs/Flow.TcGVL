@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="Flow" Id="{5999ee03-49af-42ad-b13b-aa87fbaafa93}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+
+// FLOW [m3/s]
+
+VAR_GLOBAL
+	
+	// Inlet flow
+	in  : REAL := 0.002; // This one seems to set itself to 0...
+	
+	// Outlet flow (indicative only - is calculated externally)
+	out : REAL := 0;
+	
+END_VAR
+
+VAR_GLOBAL CONSTANT
+	
+	// CIP & normal flows
+	cip    : REAL := 0.004;
+	normal : REAL := 0.002;
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="Steam" Id="{da81ed46-642b-4693-84a6-3b2c47e87add}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+
+// STEAM [°C]
+
+VAR_GLOBAL
+	
+	// Current steam tempurature
+	now    : REAL := 50;
+	
+	// Target steam tempurature
+	target : REAL := 50;
+		
+END_VAR
+
+VAR_GLOBAL CONSTANT
+	
+	// Minimum, Maximum, Tempurature change per second
+	mini : REAL :=  50;
+	maxi : REAL := 300;
+	step : REAL :=  10; // change per second
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

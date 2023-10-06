@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="RunAlarmCheck" Id="{ce410715-b7c9-458a-8e35-072a529c7159}" SpecialFunc="None">
+    <Declaration><![CDATA[
+// RUN THE ALARM CHECK
+
+FUNCTION RunAlarmCheck
+
+VAR
+	// Threashold value (both tests just happen to use the same value)
+	thresh : REAL := 90;
+	
+	// FILL is alarm?
+	h : BOOL := High.full_percent > thresh;
+	
+	// TEMP is alarm?
+	t : BOOL := Temp.now > thresh;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[status.alarm := h OR t;]]></ST>
+    </Implementation>
+    <LineIds Name="RunAlarmCheck">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

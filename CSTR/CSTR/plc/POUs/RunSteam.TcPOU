@@ -1,50 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="RunSteam" Id="{475fa9dc-9a0d-4478-a41e-ad86e1ec38db}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION RunSteam : REAL
+    <Declaration><![CDATA[
+// CALCULATE NEXT STEAM TEMPURATURE
+
+FUNCTION RunSteam
 
 VAR
-	now  : REAL := GVL.steam_now;
-	maxi : REAL := GVL.steam_maxi;
-	mini : REAL := GVL.steam_mini;
-	step : REAL := GVL.steam_step * GVL.time_step;
-	set  : REAL := gvl.steam_set;
 	
+	// User input target
+	targ : REAL := userin.steam_temp;
+	
+	// Import steam parameters for clarity
+	now  : REAL := steam.now;
+	maxi : REAL := steam.maxi;
+	mini : REAL := steam.mini;
+	step : REAL := steam.step * userin.time_step;
+	
+	// Calculation variables
 	new  : REAL;
 	diff : REAL;
 	
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Validation
-IF set > maxi THEN
-	set := maxi;
-ELSIF set < mini THEN
-	set := mini;
+      <ST><![CDATA[// Import target temp from GUI
+steam.target := targ;
+
+// Validation
+IF targ > maxi THEN
+	targ := maxi;
+ELSIF targ < mini THEN
+	targ := mini;
 END_IF
 
-
-diff := set - now; // How many degrees to move to setpoint
+// Calculate what change is needed to meet the target
+diff := targ - now;
 
 
 // LESS than target and MORE than a step away
 IF diff >= step THEN
+	// New temp is this plus step
 	new := now + step;	
 
 // GREATER then target and MORE than a step away
 ELSIF diff <= -step THEN
+	// New temp is this minus step
 	new := now - step;
 
 // Is correct or within one step
 ELSE
-	new := set;
+	new := targ;
 END_IF
 
-
-gvl.temp_wall := new;
-gvl.steam_now := new;]]></ST>
+// Save new value
+temp.wall := new;
+steam.now := new;]]></ST>
     </Implementation>
     <LineIds Name="RunSteam">
+      <LineId Id="105" Count="0" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="106" Count="0" />
       <LineId Id="65" Count="0" />
       <LineId Id="68" Count="1" />
       <LineId Id="73" Count="1" />
@@ -52,13 +68,16 @@ gvl.steam_now := new;]]></ST>
       <LineId Id="77" Count="0" />
       <LineId Id="75" Count="0" />
       <LineId Id="66" Count="0" />
-      <LineId Id="78" Count="0" />
+      <LineId Id="99" Count="0" />
       <LineId Id="67" Count="0" />
       <LineId Id="56" Count="0" />
       <LineId Id="49" Count="0" />
+      <LineId Id="100" Count="0" />
       <LineId Id="45" Count="0" />
       <LineId Id="58" Count="1" />
-      <LineId Id="43" Count="1" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="101" Count="0" />
+      <LineId Id="44" Count="0" />
       <LineId Id="81" Count="0" />
       <LineId Id="79" Count="0" />
       <LineId Id="64" Count="0" />

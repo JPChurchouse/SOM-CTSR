@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="GetVolume" Id="{77c24618-b925-4840-a558-accae81d177a}" SpecialFunc="None">
+    <Declaration><![CDATA[
+// GET THE CURRENT VOLUME OF LIQUID IN THE TANK [m3]
+
+FUNCTION GetVolume : REAL
+
+VAR
+	
+	a : REAL := tank.A;
+	h : REAL := High.now;
+	
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GetVolume := a * h;]]></ST>
+    </Implementation>
+    <LineIds Name="GetVolume">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

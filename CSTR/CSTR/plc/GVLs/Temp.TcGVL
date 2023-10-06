@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="Temp" Id="{d2804066-052d-46fd-8da7-80162bb7d491}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+
+// TEMPURATURE [°C]
+
+VAR_GLOBAL
+	
+	// Current tempurature
+	now  : REAL := 80;
+	
+	// Wall temp
+	wall : REAL := 25;
+	
+END_VAR
+
+VAR_GLOBAL CONSTANT
+	
+	// Inlet temp (const)
+	in : REAL := 25;
+	
+	// Offset for Celcius/Kelvin conversion
+	offset : REAL := 273.16;
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

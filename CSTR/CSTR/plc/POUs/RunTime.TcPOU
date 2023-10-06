@@ -1,27 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="RunTime" Id="{32785608-3767-47f1-a28c-91f917ff1a3b}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION RunTime : REAL
+    <Declaration><![CDATA[
+// PROCESS THIS MACHINE CYCLE AS A TIME STEP
+
+FUNCTION RunTime
 
 VAR
-	cycle : REAL := GVL.time_cyc;
-	next  : REAL := GVL.time_now + GVL.time_step;
-	cip   : REAL := cycle - GVL.time_cip;
+	
+	// Read in values for easy access
+	cycle : REAL := status.time_cycle;
+	next  : REAL := status.time_now + userin.time_step;
+	cip   : REAL := cycle - status.time_cip;
+	
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF next > cycle THEN
+      <ST><![CDATA[// Loop back to 0 if new time is over
+IF next > cycle THEN
 	next := 0;
 END_IF
 
+// Update CIP status based on the new time
 SetCIP(next >= cip);
 
-RunTime := next;]]></ST>
+// Save new time
+status.time_now := next;]]></ST>
     </Implementation>
     <LineIds Name="RunTime">
+      <LineId Id="37" Count="0" />
       <LineId Id="7" Count="0" />
       <LineId Id="15" Count="1" />
+      <LineId Id="38" Count="0" />
       <LineId Id="18" Count="0" />
       <LineId Id="17" Count="0" />
+      <LineId Id="39" Count="0" />
       <LineId Id="24" Count="0" />
       <LineId Id="23" Count="0" />
     </LineIds>

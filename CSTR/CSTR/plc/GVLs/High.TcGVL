@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="High" Id="{5ad93a89-b822-4ae0-bcd5-8670f268bdae}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+
+// HEIGHT [m]
+
+VAR_GLOBAL
+	
+	// Current height
+	now : REAL := 2.2;
+	
+	// Current level in tank as percentage
+	full_percent : REAL := 0; // [0-100.1%] (small overflow)
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
