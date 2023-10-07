@@ -21,8 +21,9 @@ VAR
 	// mol/m3 * m3/s -> mol/s
 	
 	// Coefficient
-	coef : REAL := userin.time_step / GetVolume();
-	// s/m3
+	step : REAL := userin.time_step;
+	vol  : REAL := GetVolume();
+	// step/vol -> s/m3
 	
 	// delta  [mol/m3]
 	dconc : REAL;
@@ -31,7 +32,13 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[dconc := (in - des - out) * coef;
+      <ST><![CDATA[// Throw error
+IF vol = 0 THEN
+	NextConc := 0;
+	RETURN;	
+END_IF
+
+dconc := (in - des - out) * step / vol;
 
 IF dconc > 0 THEN
 	dconc := 0;
@@ -40,12 +47,13 @@ END_IF
 NextConc := conc.now + dconc;]]></ST>
     </Implementation>
     <LineIds Name="NextConc">
-      <LineId Id="29" Count="0" />
-      <LineId Id="88" Count="0" />
-      <LineId Id="82" Count="0" />
-      <LineId Id="84" Count="0" />
-      <LineId Id="86" Count="0" />
-      <LineId Id="89" Count="0" />
+      <LineId Id="143" Count="0" />
+      <LineId Id="124" Count="0" />
+      <LineId Id="135" Count="0" />
+      <LineId Id="175" Count="0" />
+      <LineId Id="121" Count="0" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="136" Count="5" />
       <LineId Id="53" Count="0" />
     </LineIds>
   </POU>

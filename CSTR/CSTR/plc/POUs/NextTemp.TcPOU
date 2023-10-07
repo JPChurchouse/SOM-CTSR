@@ -53,11 +53,23 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[dtemp := (Qin + Qre + Qco) * dtime / mtcp;
-NextTemp := temp.now + dtemp;]]></ST>
+      <ST><![CDATA[// Throw error
+IF mtcp <= 0 THEN
+	nexttemp := 0;
+	RETURN;
+END_IF
+
+dtemp := (Qin + Qre + Qco) * dtime / mtcp;
+NextTemp := temp.now + dtemp;
+
+]]></ST>
     </Implementation>
     <LineIds Name="NextTemp">
-      <LineId Id="7" Count="0" />
+      <LineId Id="122" Count="3" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="126" Count="0" />
+      <LineId Id="120" Count="1" />
+      <LineId Id="118" Count="0" />
       <LineId Id="61" Count="0" />
     </LineIds>
   </POU>

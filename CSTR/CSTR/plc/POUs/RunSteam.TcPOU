@@ -10,6 +10,7 @@ VAR
 	
 	// User input target
 	targ : REAL := userin.steam_temp;
+	enabled : bool := userin.enable_steam;
 	
 	// Import steam parameters for clarity
 	now  : REAL := steam.now;
@@ -28,11 +29,19 @@ END_VAR
 steam.target := targ;
 
 // Validation
-IF targ > maxi THEN
+IF step <= 0 THEN
+	RETURN;
+ELSIF targ > maxi THEN
 	targ := maxi;
 ELSIF targ < mini THEN
 	targ := mini;
 END_IF
+
+// Manual override
+IF NOT enabled THEN
+	targ := 20;
+END_IF
+
 
 // Calculate what change is needed to meet the target
 diff := targ - now;
@@ -62,9 +71,15 @@ steam.now := new;]]></ST>
       <LineId Id="107" Count="0" />
       <LineId Id="106" Count="0" />
       <LineId Id="65" Count="0" />
-      <LineId Id="68" Count="1" />
+      <LineId Id="158" Count="2" />
+      <LineId Id="69" Count="0" />
       <LineId Id="73" Count="1" />
       <LineId Id="70" Count="0" />
+      <LineId Id="134" Count="0" />
+      <LineId Id="131" Count="0" />
+      <LineId Id="130" Count="0" />
+      <LineId Id="132" Count="1" />
+      <LineId Id="135" Count="0" />
       <LineId Id="77" Count="0" />
       <LineId Id="75" Count="0" />
       <LineId Id="66" Count="0" />

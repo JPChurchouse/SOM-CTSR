@@ -8,15 +8,28 @@ FUNCTION SetCIP
 
 VAR_INPUT
 	
-	// Input
+	// New CIP status
 	cip : BOOL := FALSE;
+	
+END_VAR
+
+VAR
+	
+	// Inlet enabled status
+	enable : BOOL := userin.enable_in;
 	
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// I'd love a ternary operator about now...
 
-// If currently CIP -> set appropriate values
-IF cip THEN
+// If in manual override
+IF NOT enable THEN
+	flow.in := 0;
+	status.is_cip := FALSE;
+	RETURN;
+	
+// If currently CIP -> set appropriate values	
+ELSIF cip THEN
 	conc.in := conc.cip;
 	flow.in := flow.cip;
 	
@@ -33,6 +46,11 @@ status.is_cip := cip;]]></ST>
       <LineId Id="7" Count="0" />
       <LineId Id="40" Count="0" />
       <LineId Id="13" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="71" Count="1" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="61" Count="0" />
       <LineId Id="12" Count="0" />
       <LineId Id="14" Count="0" />
       <LineId Id="16" Count="0" />

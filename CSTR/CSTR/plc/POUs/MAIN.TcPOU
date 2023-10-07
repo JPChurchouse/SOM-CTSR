@@ -26,7 +26,10 @@ RunSteam();
 RunAlarmCheck();
 
 // Run time
-RunTime();]]></ST>
+RunTime();
+
+// Run flash
+RunFlash();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="40" Count="0" />
@@ -41,6 +44,9 @@ RunTime();]]></ST>
       <LineId Id="72" Count="0" />
       <LineId Id="45" Count="0" />
       <LineId Id="56" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="81" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -15,14 +15,31 @@ VAR
 	b : REAL := Const.Rk; 
 	
 	// Module C []
-	c : REAL := EXP(-const.AE / (temp.now + temp.offset));
+	kelvin : REAL := temp.now + temp.offset;
+	AE     : REAL := const.AE;
+	c      : REAL;
 	
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// [mol2/m32 * m3/mol/s -> mol/m3/s]
+      <ST><![CDATA[// Error handling
+IF kelvin <= 0 THEN
+	getreactrate :=0;
+	RETURN;
+END_IF
+
+c := EXP(-AE / kelvin);
+
+// [mol2/m32 * m3/mol/s -> mol/m3/s]
 GetReactRate := a * b * c;]]></ST>
     </Implementation>
     <LineIds Name="GetReactRate">
+      <LineId Id="54" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="48" Count="1" />
+      <LineId Id="53" Count="0" />
       <LineId Id="27" Count="0" />
       <LineId Id="7" Count="0" />
     </LineIds>

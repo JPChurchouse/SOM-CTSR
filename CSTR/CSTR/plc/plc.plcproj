@@ -62,6 +62,9 @@
     <Compile Include="POUs\RunAlarmCheck.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\RunFlash.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\RunSteam.TcPOU">
       <SubType>Code</SubType>
     </Compile>

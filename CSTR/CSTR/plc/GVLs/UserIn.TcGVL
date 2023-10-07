@@ -8,16 +8,20 @@
 VAR_GLOBAL
 	
 	// Time step [s]
-	time_step : REAL := 2;
+	time_step    : REAL := 2;
 	
 	// Outlet valve position [0-100 as percentage]
-	outlet_percent : REAL := 0;
+	out_percent  : REAL := 0;
 	
 	// Steam tempurature [°C]
-	steam_temp : REAL := 50;
+	steam_temp   : REAL := 50;
 	
 	// Autohold status
-	IO_match : BOOL := FALSE;
+	IO_match     : BOOL := FALSE;
+	
+	// Stop buttons
+	enable_in    : BOOL := TRUE;
+	enable_steam : BOOL := TRUE;
 	
 END_VAR]]></Declaration>
   </GVL>

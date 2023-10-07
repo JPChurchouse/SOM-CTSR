@@ -34,7 +34,7 @@ END_VAR]]></Declaration>
 dhigh := (in - out) * coef;
 next := High.now + dhigh;
 
-// Remove overflow
+// Remove overflow and error handling
 IF next > maxi THEN
 	next := maxi;
 ELSIF next <= 0 THEN

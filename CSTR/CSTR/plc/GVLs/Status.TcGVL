@@ -16,6 +16,9 @@ VAR_GLOBAL
 	// Time now and time per machine cycle
 	time_now  : REAL := 0; // [s]
 	
+	// Flash generator
+	flash : BOOL := FALSE;
+	
 END_VAR
 
 VAR_GLOBAL CONSTANT

@@ -18,7 +18,7 @@ VAR
 	
 	
 	// Outlet valve value [0-100%]
-	valve : REAL := userin.outlet_percent;
+	valve : REAL := userin.out_percent;
 
 	// Flow in and out [m3/s]
 	in  : REAL := flow.in;
@@ -43,7 +43,7 @@ flow.out := out;
 // If running IO matching
 // Try to find a valve setting to equate in and out
 IF match THEN
-	userin.outlet_percent := valve + (in-out)*1000;
+	userin.out_percent := valve + (in-out)*1000;
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="GetOutFlow">
