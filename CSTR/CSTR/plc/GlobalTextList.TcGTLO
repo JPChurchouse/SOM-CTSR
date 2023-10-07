@@ -131,6 +131,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"922"</v>
+              <v n="TextDefault">"%i%%"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"608"</v>
               <v n="TextDefault">"%i*100"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -253,6 +258,11 @@
             <o>
               <v n="TextID">"595"</v>
               <v n="TextDefault">"MASTER ALERT"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"182"</v>
+              <v n="TextDefault">"mol/L"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
